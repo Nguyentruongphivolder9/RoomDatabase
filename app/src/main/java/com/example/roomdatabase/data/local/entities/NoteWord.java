@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "note")
 public class NoteWord {
 
     @PrimaryKey(autoGenerate = true)
@@ -18,9 +18,9 @@ public class NoteWord {
     }
 
     @Ignore
-    public NoteWord(int id, String title) {
-        this.id = id;
+    public NoteWord(String title, String description) {
         this.title = title;
+        this.description = description;
     }
 
     public int getId() {
